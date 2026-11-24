@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quilka - Agencia Creativa Digital</title>
+<link rel="icon" type="image/png" href="imagenes/Isologo Q-05.png">
+
+    <!-- Fuente Poppins de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECCIÓN 1: ENCABEZADO -->
+    <header class="seccion-hero">
+        <div class="contenedor-menu-completo">
+            <img src="imagenes/footer - isologo-05.png" alt="Logo Q" class="img-isologo-afuera">
+            <nav class="barra-navegacion">
+                <ul class="menu-enlaces">
+                    <li><a href="#clientes">CLIENTES</a></li>
+                    <li><a href="#portafolio">PORTAFOLIO</a></li>
+                    <li><a href="#servicios">SERVICIOS</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="titulo-principal">
+            <h1>Agencia creativa digital.</h1>
+            <div class="flecha-animada">⌄</div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 2: CARRUSEL -->
+    <section class="seccion-slider" id="clientes">
+    <div class="contenedor-carrusel">
+        <button class="flecha-slider" id="btn-izq" aria-label="Anterior">◄</button>
+
+        <div class="slider-track">
+            <div class="slider-tira">
+                <div class="tarjeta-carrusel">
+                    <img src="imagenes/TARJETA -carteleria.png" alt="Cartelería promocional" class="tarjeta-portfolio">
+                </div>
+                <div class="tarjeta-carrusel">
+                    <img src="imagenes/TARJETA-placas.png" alt="Placas" class="tarjeta-portfolio">
+                </div>
+                <div class="tarjeta-carrusel">
+                    <img src="imagenes/TARJETA-flyer.png" alt="Flyers" class="tarjeta-portfolio">
+                </div>
+                <div class="tarjeta-carrusel">
+                    <img src="imagenes/TARJETA-identidad.png" alt="Identidad visual" class="tarjeta-portfolio">
+                </div>
+            </div>
+        </div>
+
+        <button class="flecha-slider" id="btn-der" aria-label="Siguiente">►</button>
+    </div>
+</section>
+
+    <!-- SECCIÓN 3: BANNERS Y CÍRCULOS -->
+ <section class="seccion-circulos" id="portafolio">
+
+    <!-- Los GIF van con <img>, no con <video> -->
+    <div class="banner-gif">
+        <img src="imagenes/BANNER QUILKA - FONDO MARRON.gif" alt="Banner Quilka">
+    </div>
+
+    <div class="contenedor-botones-circulares">
+
+        <!-- Portafolio: Behance -->
+        <a href="https://www.behance.net/quilkaagencia" class="enlace-circulo" target="_blank" rel="noopener noreferrer">
+            <img src="imagenes/circulo - portafolio.png" alt="Portafolio" class="img-circulo">
+        </a>
+
+        <!-- Audiovisual: Google Drive -->
+        <a href="https://drive.google.com/file/d/11tzl61H0grucjDeV8mbcn-ZJlgjNU9et/view" class="enlace-circulo" target="_blank" rel="noopener noreferrer">
+            <img src="imagenes/circulo - audiovisual.png" alt="Audiovisual" class="img-circulo">
+        </a>
+
+        <!-- Contactanos: Instagram -->
+        <a href="https://www.instagram.com/quilka.ok/" class="enlace-circulo" target="_blank" rel="noopener noreferrer">
+            <img src="imagenes/circulo - instagram.png" alt="Instagram de Quilka" class="img-circulo">
+        </a>
+
+    </div>
+
+    <div class="banner-gif">
+        <img src="imagenes/BANNER QUILKA FONDO AMARILLO.gif" alt="Banner Quilka">
+    </div>
+
+</section>
+
+    <!-- SECCIÓN 4: SERVICIOS -->
+    <section class="seccion-servicios" id="servicios">
+        <div class="contenedor-servicios">
+
+            <div class="bloque-imagen-servicios">
+                <img src="imagenes/mockup - servicios-14.png" alt="Mockup Quilka" class="img-mockup-servicios">
+            </div>
+
+            <div class="bloque-texto-servicios">
+                <ul>
+                    <li class="item-servicio">Branding e identidad visual</li>
+                    <li class="item-servicio">Diseño para redes sociales</li>
+                    <li class="item-servicio">Motion Graphics</li>
+                    <li class="item-servicio">Diseño gráfico</li>
+                    <li class="item-servicio">Edición de video</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEPARADOR EN MOVIMIENTO -->
+ <div class="banner-gif">
+    <img src="imagenes/BANNER QUILKA FONDO ROJO.gif" alt="Banner Quilka">
+</div>
+
+    <!-- SECCIÓN 5: CONTACTO -->
+    <section class="seccion-contacto" id="contacto">
+        <div class="formulario-contenedor">
+            <span class="etiqueta-contacto">CONTACTANOS</span>
+            <form id="form-contacto">
+    <textarea id="propuesta" name="message" placeholder="Escribe tu propuesta aquí..." required></textarea>
+    <div class="fila-email">
+        <input type="email" id="email" name="user_email" placeholder="Tu mail:" aria-label="Tu mail" required>
+        <button type="submit" class="btn-enviar">ENVIAR</button>
+    </div>
+</form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+   <!-- FOOTER -->
+<footer class="pie-pagina">
+    <img src="imagenes/Isologo Q-05.png" alt="Logo Quilka" class="logo-footer-img">
+
+    <div class="datos-contacto-footer">
+
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=quilka.agenciadigital@gmail.com" class="item-contacto" target="_blank" rel="noopener noreferrer">
+    <img src="imagenes/logo-mail.png" alt="Mail" class="icono-footer">
+    <span>quilka.agenciadigital@gmail.com</span>
+</a>
+
+        <!-- Instagram: abre el perfil en una pestaña nueva -->
+        <a href="https://www.instagram.com/quilka.ok/" class="item-contacto" target="_blank" rel="noopener noreferrer">
+            <img src="imagenes/logo-ig.png" alt="Instagram" class="icono-footer">
+            <span>@quilka.ok</span>
+        </a>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+/* =========================================
+   0. COLORES, FUENTE Y RESETEO
+   ========================================= */
+:root {
+    --color-naranja: #B84D32;
+    --color-amarillo: #F1C453;
+    --color-marron-oscuro: #3f2b20;
+    --color-crema: #F1E9DD;
+    --color-texto: #FFFFFF;
+    --fuente-principal: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente-principal);
+}
+
+body {
+    background-color: var(--color-naranja);
+    color: var(--color-texto);
+    overflow-x: hidden;
+}
+
+html {
+
+    scroll-padding-top: 170px;     /* evita que el menú tape el título de cada sección */
+}
+
+img {
+    max-width: 100%; /* ninguna imagen se pasa del ancho de su caja */
+}
+
+/* =========================================
+   1. ENCABEZADO (HERO)
+   ========================================= */
+.seccion-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 185px 20px 30px; 
+
+    background-image: url('imagenes/Fondo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Q + barra, lado a lado */
+.contenedor-menu-completo {
+    position: fixed;            /* se queda fijo arriba aunque scrolees */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);   /* lo centra horizontalmente */
+    width: max-content;
+    max-width: 100%;
+    z-index: 1000;              /* para que quede por encima de todo */
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-isologo-afuera {
+    height: 140px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px #3f2b20);
+}
+
+.barra-navegacion {
+    background-color: var(--color-amarillo);
+    padding: 22px 50px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px #3f2b20;
+}
+
+.menu-enlaces {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu-enlaces a {
+    text-decoration: none;
+    color: var(--color-naranja);
+    font-weight: 600;
+    font-size: 26px;
+}
+
+/* Título y flecha: arrancan arriba y cada uno se separa con el mismo margen */
+.titulo-principal {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: var(--color-amarillo);
+}
+
+.titulo-principal h1 {
+    font-size: 64px;
+    font-weight: 400;
+    margin-top: 20vh;   /* distancia entre el nav y el título */
+}
+
+.flecha-animada {
+    color: var(--color-amarillo);
+    font-size: 60px;
+    margin-top: 20vh;   /* misma distancia que arriba: tiene que ser igual al número de h1 */
+    animation: flotar 1.5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+/* =========================================
+   2. CARRUSEL
+   ========================================= */
+.seccion-slider {
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+}
+
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Ventana: el ancho de acá es el tamaño de la tarjeta, y esconde lo que queda afuera */
+.slider-track {
+    width: 55vw;
+    overflow: hidden;
+    border-radius: 16px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+
+    
+}
+
+/* Tira con todas las tarjetas en fila: es la que se desliza */
+.slider-tira {
+    display: flex;
+   }
+
+/* Cada tarjeta ocupa exactamente el ancho de la ventana */
+.tarjeta-carrusel {
+    flex: 0 0 100%;
+}
+
+.tarjeta-portfolio {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.flecha-slider {
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: var(--color-marron-oscuro);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.flecha-slider:hover {
+    transform: scale(1.2);
+}
+
+/* =========================================
+   3. BANNERS Y CÍRCULOS
+   ========================================= */
+.seccion-circulos {
+    background-color: var(--color-marron-oscuro);
+}
+
+/* Los banners son GIF: ocupan todo el ancho y se mueven solos */
+.banner-gif img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+/* GRID de 3 columnas iguales para los círculos */
+.contenedor-botones-circulares {
+    display: grid;
+    grid-template-columns: repeat(3, 26vw); ;   /* antes 16vw */
+    justify-content: center;
+    gap: 0vw;                                 /* antes 3vw */
+    padding: 120px 20px;                      /* antes 80px 20px */
+}
+
+.enlace-circulo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-circulo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.enlace-circulo:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+/* =========================================
+   4. SERVICIOS
+   ========================================= */
+.seccion-servicios {
+    background-color: var(--color-amarillo);
+    color: var(--color-marron-oscuro);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* GRID de 2 columnas iguales: mockup | lista */
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1500px;
+    width: 100%;
+}
+
+.img-mockup-servicios {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.bloque-texto-servicios ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-servicio {
+    font-size: 34px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 35px;
+}
+
+/* Puntito naranja de cada ítem */
+.item-servicio::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-naranja);
+    border-radius: 50%;
+}
+
+/* --- Animación de entrada ---
+   Empiezan ocultos. El JS le agrega la clase 'visible' a la sección
+   cuando el usuario llega hasta ahí, y recién ahí se animan. */
+.bloque-imagen-servicios,
+.item-servicio {
+    opacity: 0;
+}
+
+.seccion-servicios.visible .bloque-imagen-servicios {
+    animation: fadeInIzquierda 1.2s ease-out forwards;
+}
+
+.seccion-servicios.visible .item-servicio {
+    animation: fadeInDerecha 1s ease-out forwards;
+}
+
+/* Un retraso distinto a cada ítem para que entren de a uno */
+.item-servicio:nth-child(1) { animation-delay: 0.3s; }
+.item-servicio:nth-child(2) { animation-delay: 0.5s; }
+.item-servicio:nth-child(3) { animation-delay: 0.7s; }
+.item-servicio:nth-child(4) { animation-delay: 0.9s; }
+.item-servicio:nth-child(5) { animation-delay: 1.1s; }
+
+@keyframes fadeInIzquierda {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInDerecha {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* =========================================
+   SEPARADOR EN MOVIMIENTO (texto que se desliza)
+   ========================================= */
+.separador-texto {
+    overflow: hidden; /* esconde lo que se sale de la pantalla */
+    padding: 15px 0;
+}
+
+.separador-texto p {
+    width: max-content;   /* la línea mide lo que mide el texto */
+    white-space: nowrap;  /* todo en un solo renglón */
+    color: var(--color-amarillo);
+    font-size: 28px;
+    font-weight: 600;
+    animation: deslizar 25s linear infinite;
+}
+
+/* =========================================
+   5. CONTACTO
+   ========================================= */
+.seccion-contacto {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+}
+
+.etiqueta-contacto {
+    background-color: var(--color-marron-oscuro);
+    color: white;
+    font-size: 24px;
+    padding: 8px 25px;
+    border-radius: 10px 10px 0 0;
+    width: fit-content;
+    font-weight: 700;
+}
+
+#propuesta {
+    width: 100%;
+    height: 250px;
+    font-size: 20px; 
+    border-radius: 0 10px 10px 10px;
+    padding: 15px;
+    border: 3px solid var(--color-marron-oscuro);
+    background-color: var(--color-crema);
+    color: var(--color-marron-oscuro);
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.fila-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fila-email input {
+    flex-grow: 1;
+    font-size: 20px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 3px solid var(--color-marron-oscuro);
+    background-color: var(--color-crema);
+    color: var(--color-marron-oscuro);
+}
+
+/* Texto de ayuda dentro de los campos */
+#propuesta::placeholder,
+.fila-email input::placeholder {
+    color: var(--color-marron-oscuro);
+    font-weight: 600;
+}
+
+.btn-enviar {
+    background-color: var(--color-marron-oscuro);
+    color: white;
+    font-size: 20px;  
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.pie-pagina {
+    background-color: var(--color-naranja); /* por si la imagen tarda en cargar */
+    background-image: url('imagenes/footer\ fondo.png');
+    background-size: cover;
+    background-position: center;
+
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 10px;
+    text-align: center;
+}
+
+.logo-footer-img {
+    height:120px;
+    width: auto;
+}
+
+/* Los dos renglones, uno debajo del otro y centrados */
+.datos-contacto-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;                /* espacio entre el mail y el Instagram */
+}
+
+/* Cada renglón: ícono + texto, centrados */
+.item-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--color-amarillo);
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;        /* saca el subrayado */
+    transition: transform 0.2s;
+}
+
+/* Por si el navegador lo vuelve a poner en el texto de adentro */
+.item-contacto span {
+    text-decoration: none;
+}
+
+.item-contacto:hover {
+    transform: scale(1.05);
+}
+
+/* Como los íconos ya no tienen aire, el alto fijo se nota tal cual */
+.icono-footer {
+    height: 46px;             /* antes 100px */
+    width: auto;
+}
+
+/* =========================================
+   TABLETS (hasta 1100px)
+   El menú pasa a medidas proporcionales al ancho de la pantalla
+   ========================================= */
+@media (max-width: 1100px) {
+
+    .contenedor-menu-completo {
+        gap: 1.5vw;
+    }
+
+    .img-isologo-afuera {
+        height: 9vw;
+    }
+
+    .barra-navegacion {
+        padding: 1.5vw 3vw;
+    }
+
+    .menu-enlaces {
+        gap: 3vw;
+    }
+
+    .menu-enlaces a {
+        font-size: 2.3vw;
+    }
+
+    .seccion-slider {
+        min-height: auto;     /* opcional: saca el hueco naranja enorme */
+        padding: 100px 20px;
+    }
+}
+/* =========================================
+   CELULARES Y TABLETS (hasta 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Menú fijo: todo proporcional al ancho de la pantalla */
+    .contenedor-menu-completo {
+        top: 12px;
+        gap: 2vw;
+    }
+
+    .img-isologo-afuera {
+        height: 12vw;
+    }
+
+    .barra-navegacion {
+        padding: 3vw 3.5vw;
+        border-radius: 30px;
+    }
+
+    .menu-enlaces {
+        gap: 2.5vw;
+    }
+
+    .menu-enlaces a {
+        font-size: 2.8vw;
+    }
+
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    /* Encabezado: el menú es más bajo, así que hay que bajar menos el título */
+    .seccion-hero {
+        padding: 100px 20px 30px;
+    }
+
+    .titulo-principal h1 {
+        font-size: 7vw;
+    }
+
+    .flecha-animada {
+        font-size: 40px;
+    }
+
+ /* Carrusel: tarjeta grande arriba, flechas abajo y pegadas */
+.seccion-slider {
+    min-height: auto;
+    padding: 60px 10px;
+}
+
+.contenedor-carrusel {
+    display: flex;
+    flex-wrap: wrap;           /* lo que no entra en la línea baja a la siguiente */
+    justify-content: center;
+    align-items: center;
+    gap: 0 40px;               /* 0 = sin espacio vertical, 40px = separación entre flechas */
+    width: 92vw;
+}
+
+.slider-track {
+    order: 1;                  /* primero la tarjeta */
+    width: 100%;               /* ocupa toda la línea, por eso las flechas bajan */
+}
+
+#btn-izq {
+    order: 2;                  /* después la flecha izquierda */
+}
+
+#btn-der {
+    order: 3;                  /* y después la derecha, a su lado */
+}
+
+.flecha-slider {
+    font-size: 26px;
+    padding: 0;
+    line-height: 1;
+    margin-top: 4px;           /* aire mínimo entre la tarjeta y las flechas */
+}
+
+    /* Círculos: ya usan vw, solo achicamos el aire de arriba y abajo */
+   .contenedor-botones-circulares {
+    grid-template-columns: 60vw;   /* una sola columna, el 60% del ancho */
+    gap: 6vw;                      /* espacio entre círculo y círculo */
+    padding: 50px 10px;
+}
+
+    /* Servicios: pasa a una sola columna */
+    .seccion-servicios {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .contenedor-servicios {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .item-servicio {
+        font-size: 20px;
+        padding-left: 25px;
+    }
+
+    .item-servicio::before {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* Contacto: el mail y el botón se apilan */
+    .etiqueta-contacto {
+        font-size: 18px;
+    }
+
+    #propuesta {
+        height: 180px;
+        font-size: 16px;   /* 16px evita que el iPhone haga zoom al tocar el campo */
+    }
+
+    .fila-email {
+        flex-wrap: wrap;
+    }
+
+    .fila-email input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btn-enviar {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .logo-footer-img {
+        height: 70px;
+    }
+
+    .item-contacto {
+        font-size: 4vw;
+    }
+
+    .item-contacto span {
+        overflow-wrap: anywhere;   /* si el mail no entra, se corta en vez de salirse */
+    }
+
+    .icono-footer {
+        height: 24px;
+    }
+}
